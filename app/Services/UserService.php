@@ -90,7 +90,24 @@ class UserService
         }
     }
 
+    public function updateProfile(User $user, array $data)
+    {
+        $user->update($data);
+        return [
+            'message' => 'Profile updated successfully',
+            'data' => $user,
+            'status' => 200
+        ];
+    }
 
+    public function deleteProfile(User $user)
+    {
+        $user->delete();
+        return [
+            'message' => 'User deleted successfully',
+            'status' => 200
+        ];
+    }
 }
 
 

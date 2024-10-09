@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Resources\UserResource;
 use App\Http\Resources\UsersListResource;
 use App\Models\User;
 use App\Services\UserService;
@@ -52,17 +54,22 @@ class UserController extends Controller
 
     public function showProfile()
     {
-        //
+        $user = User::find(Auth::id());
+        return UserResource::make($user);
     }
 
 
     public function updateProfile(UpdateProfileRequest $request, UserService $service)
     {
-        //
+        $user = Auth::user();
+        $result = $service->updateProfile($user, $request->validated());
+        return response()->json($result, $result['status']);
     }
 
-    public function deleteProfile()
+    public function deleteProfile(UserService $service)
     {
-        //
+        $user = Auth::user();
+        $result = $service->deleteProfile($user);
+        return response()->json($result, $result['status']);
     }
 }

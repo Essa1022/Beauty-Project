@@ -10,12 +10,11 @@ Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
     Route::post('/', [UserController::class, 'store'])->name('admin.store')->withoutMiddleware('auth:sanctum');
     Route::put('/{user}', [UserController::class, 'update'])->name('admin.update');
     Route::delete('/{user}', [UserController::class, 'destroy'])->name('admin.destroy');
-
-    // User-specific routes
-    Route::get('/profile', [UserController::class, 'showProfile'])->name('profile.show');
+});
+    Route::get('profile', [UserController::class, 'showProfile'])->name('profile.show');
     Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
     Route::delete('/profile', [UserController::class, 'deleteProfile'])->name('profile.delete');
-});
+
 
 
 
