@@ -21,6 +21,6 @@ class CategoryController extends Controller
     {
         $LoggedInUser = Auth::user();
         $result = $service->update($LoggedInUser, $category, $request->validated('name'));
-        return [$result, $result['status']];
+        return response()->json($result, $result['status']);
     }
 }
