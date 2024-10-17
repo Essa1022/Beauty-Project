@@ -85,7 +85,7 @@ class ArticleService
 
     public function updateArticle(User $user, Article $article, array $data)
     {
-        if (!$user->can('update.article'))
+        if ($user->can('update.article'))
         {
             $result = $article->update($data);
             return [

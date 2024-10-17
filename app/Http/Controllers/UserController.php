@@ -45,7 +45,7 @@ class UserController extends Controller
         return response()->json($result);
     }
 
-    public function destroy(UserService $service, User $user)
+    public function delete(UserService $service, User $user)
     {
         $LoggedInUser = Auth::user();
         $result = $service->deleteUser($LoggedInUser, $user);

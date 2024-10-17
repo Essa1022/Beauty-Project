@@ -9,7 +9,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/{user}', [UserController::class, 'show'])->name('admin.show');
     Route::post('/', [UserController::class, 'store'])->name('admin.store')->withoutMiddleware('auth:sanctum');
     Route::put('/{user}', [UserController::class, 'update'])->name('admin.update');
-    Route::delete('/{user}', [UserController::class, 'destroy'])->name('admin.destroy');
+    Route::delete('/{user}', [UserController::class, 'delete'])->name('admin.delete');
 });
     Route::get('profile', [UserController::class, 'showProfile'])->name('profile.show');
     Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
