@@ -10,8 +10,7 @@ class ArticleService
 {
     public function articlesList()
     {
-        $articles = Article::where('status', true)->orderBy('id', 'desc')->paginate(10);
-        return $articles;
+        return Article::where('status', true)->orderBy('id', 'desc')->paginate(10);
     }
 
 
@@ -50,7 +49,7 @@ class ArticleService
     {
         if (!$user->can('see.article'))
         {
-        return $article;
+            return $article;
         }
         else
         {
