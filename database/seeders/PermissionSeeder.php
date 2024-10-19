@@ -60,28 +60,7 @@ class PermissionSeeder extends Seeder
             $Writer = Role::create(['name' => 'Writer']);
         }
 
-        $Super_Admin->syncPermissions([
-            'see.role',
-            'give.role',
-            'see.user',
-            'update.user',
-            'delete.user',
-            'update.category',
-            'create.article',
-            'see.article',
-            'update.article',
-            'delete.article',
-            'see.comment',
-            'update.comment',
-            'delete.comment',
-            'create.media',
-            'delete.media',
-            'create.setting',
-            'update.setting',
-            'delete.setting',
-            'see.setting'
-        ]);
-
+        $Super_Admin->syncPermissions(Permission::all());
 
         $Admin->syncPermissions([
             'see.user',
