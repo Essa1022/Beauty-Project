@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Article;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ChangeCommentStatusRequest extends FormRequest
+class StoreArticleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,9 @@ class ChangeCommentStatusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => 'required|in:approved,rejected'
+            'title' => 'required|string|max:255',
+            'short_text' => 'required|string|max:255',
+            'long_text' => 'required|array'
         ];
     }
 }

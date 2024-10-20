@@ -63,7 +63,7 @@ class ArticleService
 
     public function storeArticle(User $user, array $data)
     {
-        if ($user->can('store.article'))
+        if ($user->can('create.article'))
         {
             $article = Article::create($data);
             return [

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ChangeCommentStatusRequest;
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Resources\CommentResource;
+use App\Http\Requests\Comment\ChangeCommentStatusRequest;
+use App\Http\Requests\Comment\StoreCommentRequest;
+use App\Http\Resources\Comment\CommentResource;
 use App\Models\Comment;
 use App\Services\CommentService;
 use Illuminate\Support\Facades\Auth;

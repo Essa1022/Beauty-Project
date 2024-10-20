@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreArticleRequest;
-use App\Http\Requests\UpdateArticleRequest;
-use App\Http\Resources\ArticleResource;
+use App\Http\Requests\Article\StoreArticleRequest;
+use App\Http\Requests\Article\UpdateArticleRequest;
+use App\Http\Resources\Article\ArticleResource;
 use App\Models\Article;
 use App\Services\ArticleService;
 use Illuminate\Support\Facades\Auth;

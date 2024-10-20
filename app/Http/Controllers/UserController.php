@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateProfileRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Http\Resources\UserResource;
-use App\Http\Resources\UsersListResource;
+use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\User\UpdateProfileRequest;
+use App\Http\Requests\User\UpdateUserRequest;
+use App\Http\Resources\User\UserResource;
+use App\Http\Resources\User\UsersListResource;
 use App\Models\User;
 use App\Services\UserService;
 use Illuminate\Support\Facades\Auth;

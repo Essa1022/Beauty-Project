@@ -90,7 +90,7 @@ class PermissionSeeder extends Seeder
         $data = [
             'first_name' => 'Ehsan',
             'last_name' => 'Zanjani',
-            'phone_number' => '09023536136',
+            'phone_number' => '09021111111',
             'password' => '12345678'
         ];
 
@@ -98,6 +98,5 @@ class PermissionSeeder extends Seeder
         $Super_Admin = $userService->storeUser($data)['data'];
 
         $Super_Admin->assignRole('Super_Admin');
-
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCommentRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class StoreCommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer|exists:users,id',
-            'service_id' => 'required|integer|exists:services,id',
-            'comment_id' => 'nullable|integer|exists:comments,id',
-            'star' => 'required|in:1,2,3,4,5',
-            'message' => 'required|string'
+            'phone_number' => 'required|string|digits:11|exists:users,phone_number',
+            'password' => 'required|string|min:8'
         ];
     }
 }
